@@ -10,3 +10,7 @@ Each benchmark PR has a matching ground-truth record in `benchmark-cases.json`. 
 npm run typecheck
 npm test
 ```
+
+## Scoring
+
+Use the same ground truth for every provider and record false positives separately from useful findings.
