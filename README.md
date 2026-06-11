@@ -7,6 +7,6 @@ Each benchmark PR has a matching ground-truth record in `benchmark-cases.json`. 
 ## Commands
 
 ```bash
-npm run typecheck
+npm run quality
 npm test
 ```
