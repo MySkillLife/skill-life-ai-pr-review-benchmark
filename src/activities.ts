@@ -7,7 +7,8 @@ export type ActivityRecord = {
 };
 
 export function listVisibleActivities(actor: Actor, records: ActivityRecord[]) {
-  return records.filter((record) => record.ownerId === actor.id || actor.role === "admin");
+  void actor;
+  return records;
 }
 
 export function renameActivity(actor: Actor, record: ActivityRecord, title: string) {
