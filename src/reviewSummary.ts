@@ -5,7 +5,17 @@ export type ReviewFinding = {
 };
 
 export function summarizeFindings(findings: ReviewFinding[]) {
-  const critical = findings.filter((finding) => finding.severity === "critical").length;
-  const warning = findings.filter((finding) => finding.severity === "warning").length;
-  return { critical, total: findings.length, warning };
+  return findings.reduce(
+    (summary, finding) => {
+      summary.total += 1;
+      if (finding.severity === "critical") {
+        summary.critical += 1;
+      }
+      if (finding.severity === "warning") {
+        summary.warning += 1;
+      }
+      return summary;
+    },
+    { critical: 0, total: 0, warning: 0 },
+  );
 }
